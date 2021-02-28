@@ -10,8 +10,6 @@ class TimerViewController: UIViewController {
   
   let timerViewModel = TimerViewModel()
   
-  
-
   override func viewDidLoad() {
     super.viewDidLoad()
     bindViewModel()
@@ -26,13 +24,17 @@ class TimerViewController: UIViewController {
   }
   
   func bindViewModel() {
-    timerViewModel.timerText.bind {[weak self] textLabel in
-      self!.timerLabel.text = textLabel
-    }
-    timerViewModel.$combineButtonLabel
+    timerViewModel.$timerText
+      .receive(on: RunLoop.main)
       .sink { value in
-        self.startStopButton.setTitle(value, for: .normal)
-        }
+        self.timerLabel.text = value }
+      .store(in: &cancellables)
+
+    
+    timerViewModel.$combineButtonLabel
+      .receive(on: RunLoop.main)
+      .sink { value in
+        self.startStopButton.setTitle(value, for: .normal) }
       .store(in: &cancellables)
   }
 }

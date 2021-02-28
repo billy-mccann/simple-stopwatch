@@ -3,9 +3,8 @@ import Combine
 
 class TimerViewModel: ObservableObject {
   
-  var timerText: Publisher<String>
+  @Published var timerText: String
   @Published var combineButtonLabel: String
-  
   
   private let startText = "Start"
   private let stopText = "Stop"
@@ -17,7 +16,7 @@ class TimerViewModel: ObservableObject {
   private var cancellable: AnyCancellable? = nil
 
   init() {
-    self.timerText = Publisher(resetTimeString)
+    self.timerText = resetTimeString
     self.combineButtonLabel = startText
     
     formatter.numberStyle = .decimal
@@ -40,7 +39,7 @@ class TimerViewModel: ObservableObject {
   
   func clearButtonPressed() {
     elapsed = 0
-    timerText.value = resetTimeString
+    timerText = resetTimeString
   }
   
   func startTimer() {
@@ -53,7 +52,7 @@ class TimerViewModel: ObservableObject {
         guard let formattedString = self.formatter.string(from: elapsedDecimal) else {
           return
         }
-        self.timerText.value = formattedString
+        self.timerText = formattedString
     }
   }
   
