@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yB4-HX-G3F" userLabel="timerLabel">
-                                <rect key="frame" x="117" y="404" width="156" height="36"/>
+                                <rect key="frame" x="117" y="193" width="156" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDZ-QE-pYN" userLabel="Start button" customClass="RoundedButton" customModule="SimpleTimer" customModuleProvider="target">
-                                <rect key="frame" x="117" y="440" width="156" height="36"/>
+                                <rect key="frame" x="117" y="229" width="156" height="36"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <state key="normal" title="Start">
@@ -40,26 +40,85 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j04-gB-I01" userLabel="Clear Button">
-                                <rect key="frame" x="117" y="476" width="156" height="36.333333333333371"/>
-                                <state key="normal" title="Reset"/>
+                                <rect key="frame" x="117" y="265" width="156" height="36.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Lap"/>
                                 <connections>
                                     <action selector="clearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i1d-Nk-0D0"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hcV-cX-CBN">
+                                <rect key="frame" x="39" y="368" width="312" height="361"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="lapCell" rowHeight="50" id="mwl-mX-TxS" customClass="LapCell" customModule="SimpleTimer" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="55.333332061767578" width="280" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mwl-mX-TxS" id="7Sz-A6-Lf0">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lap #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDT-0r-q3q" userLabel="Lap label">
+                                                    <rect key="frame" x="0.0" y="0.0" width="84" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnx-RC-7A4" userLabel="Time Label">
+                                                    <rect key="frame" x="84" y="0.0" width="84" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M8-Ba-Upg">
+                                                    <rect key="frame" x="168" y="0.0" width="112" height="50"/>
+                                                    <state key="normal" title="Delete lap"/>
+                                                    <connections>
+                                                        <action selector="deleteLapPressed:" destination="mwl-mX-TxS" eventType="touchUpInside" id="MuK-PM-z09"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1M8-Ba-Upg" firstAttribute="top" secondItem="7Sz-A6-Lf0" secondAttribute="top" id="3iD-Ph-yOe"/>
+                                                <constraint firstAttribute="trailing" secondItem="1M8-Ba-Upg" secondAttribute="trailing" id="5uW-K3-QPS"/>
+                                                <constraint firstItem="mnx-RC-7A4" firstAttribute="height" secondItem="lDT-0r-q3q" secondAttribute="height" id="NDy-K0-Itz"/>
+                                                <constraint firstItem="1M8-Ba-Upg" firstAttribute="height" secondItem="7Sz-A6-Lf0" secondAttribute="height" id="QbC-Sy-aeI"/>
+                                                <constraint firstItem="lDT-0r-q3q" firstAttribute="width" secondItem="7Sz-A6-Lf0" secondAttribute="width" multiplier="0.3" id="QtM-Y3-Kwd"/>
+                                                <constraint firstItem="mnx-RC-7A4" firstAttribute="leading" secondItem="lDT-0r-q3q" secondAttribute="trailing" id="Rxt-4T-vUG"/>
+                                                <constraint firstItem="lDT-0r-q3q" firstAttribute="height" secondItem="7Sz-A6-Lf0" secondAttribute="height" id="XFd-N8-nV7"/>
+                                                <constraint firstItem="lDT-0r-q3q" firstAttribute="top" secondItem="7Sz-A6-Lf0" secondAttribute="top" id="dlB-pO-5CF"/>
+                                                <constraint firstItem="mnx-RC-7A4" firstAttribute="width" secondItem="lDT-0r-q3q" secondAttribute="width" id="lqP-KM-uEN"/>
+                                                <constraint firstItem="mnx-RC-7A4" firstAttribute="top" secondItem="lDT-0r-q3q" secondAttribute="top" id="shY-i2-Eig"/>
+                                                <constraint firstItem="1M8-Ba-Upg" firstAttribute="width" secondItem="7Sz-A6-Lf0" secondAttribute="width" multiplier="0.4" id="xSE-gY-8JQ"/>
+                                                <constraint firstItem="lDT-0r-q3q" firstAttribute="leading" secondItem="7Sz-A6-Lf0" secondAttribute="leading" id="zZt-vf-MUd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deleteLapButton" destination="1M8-Ba-Upg" id="6Tj-DB-1NQ"/>
+                                            <outlet property="lapNumberLabel" destination="lDT-0r-q3q" id="OMD-7s-XRi"/>
+                                            <outlet property="lapTimeLabel" destination="mnx-RC-7A4" id="bSN-25-uID"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yB4-HX-G3F" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2io-2q-OIW"/>
+                            <constraint firstItem="yB4-HX-G3F" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.5" id="2io-2q-OIW"/>
                             <constraint firstItem="yB4-HX-G3F" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.05" id="4mR-9d-D6H"/>
                             <constraint firstItem="j04-gB-I01" firstAttribute="height" secondItem="mDZ-QE-pYN" secondAttribute="height" id="DXd-Lf-S0q"/>
                             <constraint firstItem="mDZ-QE-pYN" firstAttribute="width" secondItem="yB4-HX-G3F" secondAttribute="width" id="Ifx-dh-jqc"/>
+                            <constraint firstItem="hcV-cX-CBN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LvK-c5-T2n"/>
+                            <constraint firstItem="hcV-cX-CBN" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.5" id="NZb-hP-0sn"/>
                             <constraint firstItem="yB4-HX-G3F" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.4" id="O9e-eL-N4s"/>
                             <constraint firstItem="yB4-HX-G3F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ugc-EY-Jx2"/>
                             <constraint firstItem="mDZ-QE-pYN" firstAttribute="height" secondItem="yB4-HX-G3F" secondAttribute="height" id="XdB-Id-SMy"/>
+                            <constraint firstItem="hcV-cX-CBN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="0.9" id="ZMd-PW-WiH"/>
                             <constraint firstItem="mDZ-QE-pYN" firstAttribute="top" secondItem="yB4-HX-G3F" secondAttribute="bottom" id="ZfM-QZ-ho2"/>
                             <constraint firstItem="j04-gB-I01" firstAttribute="width" secondItem="mDZ-QE-pYN" secondAttribute="width" id="aEp-PE-izn"/>
                             <constraint firstItem="j04-gB-I01" firstAttribute="leading" secondItem="mDZ-QE-pYN" secondAttribute="leading" id="acm-Ai-ZeT"/>
+                            <constraint firstItem="hcV-cX-CBN" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.8" id="fhW-QT-8Ly"/>
                             <constraint firstItem="mDZ-QE-pYN" firstAttribute="leading" secondItem="yB4-HX-G3F" secondAttribute="leading" id="vbx-k4-jqp"/>
                             <constraint firstItem="j04-gB-I01" firstAttribute="top" secondItem="mDZ-QE-pYN" secondAttribute="bottom" id="xoX-I1-GWx"/>
                         </constraints>
@@ -77,13 +136,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="clearButton" destination="j04-gB-I01" id="fbV-if-K90"/>
+                        <outlet property="lapsTable" destination="hcV-cX-CBN" id="wmz-zL-pcG"/>
                         <outlet property="startStopButton" destination="mDZ-QE-pYN" id="lEJ-uU-dDu"/>
                         <outlet property="timerLabel" destination="yB4-HX-G3F" id="Qax-Vv-Ux4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="348" y="-927"/>
+            <point key="canvasLocation" x="347.69230769230768" y="-927.01421800947867"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nJj-MX-PV3">

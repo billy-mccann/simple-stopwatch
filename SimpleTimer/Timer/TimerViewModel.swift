@@ -4,10 +4,9 @@ import Combine
 class TimerViewModel: ObservableObject {
   
   @Published var timerText: String
-  @Published var combineButtonLabel: String
+  @Published var startStopButtonLabelText: String
+  @Published var laps: [String] = []
   
-  private let startText = "Start"
-  private let stopText = "Stop"
   private let resetTimeString = String(0.0)
   
   private var timerIsRunning: Bool = false
@@ -17,7 +16,7 @@ class TimerViewModel: ObservableObject {
 
   init() {
     self.timerText = resetTimeString
-    self.combineButtonLabel = startText
+    self.startStopButtonLabelText = TimerStrings.TIMER_START_TEXT
     
     formatter.numberStyle = .decimal
     formatter.maximumFractionDigits = 2
@@ -27,11 +26,11 @@ class TimerViewModel: ObservableObject {
   func startStopButtonPressed() {
     switch timerIsRunning {
     case true:
-      combineButtonLabel = startText
+      startStopButtonLabelText = TimerStrings.TIMER_START_TEXT
       timerIsRunning = !timerIsRunning
       stopTimer()
     case false:
-      combineButtonLabel = stopText
+      startStopButtonLabelText = TimerStrings.TIMER_STOP_TEXT
       timerIsRunning = !timerIsRunning
       startTimer()
     }
@@ -39,12 +38,17 @@ class TimerViewModel: ObservableObject {
   
   func clearButtonPressed() {
     elapsed = 0
+    laps.append(timerText)
     timerText = resetTimeString
+  }
+  
+  func deleteLap(_ indexForLap: Int) {
+    laps.remove(at: indexForLap)
   }
   
   func startTimer() {
     cancellable = Timer
-      .publish(every: 0.01, on: RunLoop.main, in: RunLoop.Mode.default)
+      .publish(every: 0.01, on: RunLoop.main, in: RunLoop.Mode.common)
       .autoconnect()
       .sink { _ in
         self.elapsed += 1

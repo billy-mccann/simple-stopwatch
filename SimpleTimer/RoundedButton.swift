@@ -5,6 +5,7 @@ import UIKit
 class RoundedButton: UIButton {
   
   @IBInspectable var cornerRadius: CGFloat = 10
+  var colorIsGreen: Bool = true
   
   override func layoutSubviews() {
     super.layoutSubviews()
