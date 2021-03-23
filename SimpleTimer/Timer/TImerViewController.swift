@@ -7,6 +7,7 @@ class TimerViewController: UIViewController, UITableViewDataSource, UITableViewD
   @IBOutlet var timerLabel: UILabel!
   @IBOutlet var startStopButton: UIButton!
   @IBOutlet var clearButton: UIButton!
+  @IBOutlet var saveLapsButton: UIButton!
   @IBOutlet var lapsTable: UITableView!
   
   private var laps: [String] = []
@@ -57,6 +58,11 @@ class TimerViewController: UIViewController, UITableViewDataSource, UITableViewD
     self.timerViewModel.clearButtonPressed()
   }
   
+  @IBAction func saveLapsPressed(_ sender: UIButton) {
+    self.timerViewModel.saveLaps()
+    self.timerViewModel.printLaps()
+  }
+  
   // MARK: TableView Methods
   func numberOfSections(in tableView: UITableView) -> Int {
     return 1
@@ -78,8 +84,8 @@ class TimerViewController: UIViewController, UITableViewDataSource, UITableViewD
   func deleteLap(indexForLap: Int) {
     self.timerViewModel.deleteLap(indexForLap)
   }
+
   // MARK: TODO: use a collectionview
   // MARK: TODO: Runloop.main vs DispatchQueue vs GCD
-  // MARK: TODO: Core Data to store lap sessions, view in next scene.
 }
 

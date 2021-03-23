@@ -39,6 +39,13 @@
                                     <action selector="startStopPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dCp-E7-EXT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x3-eg-Hma" userLabel="Save Laps Button">
+                                <rect key="frame" x="117" y="301.33333333333331" width="156" height="36"/>
+                                <state key="normal" title="Save Laps"/>
+                                <connections>
+                                    <action selector="saveLapsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kRY-0t-S7w"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j04-gB-I01" userLabel="Clear Button">
                                 <rect key="frame" x="117" y="265" width="156" height="36.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -118,7 +125,11 @@
                             <constraint firstItem="mDZ-QE-pYN" firstAttribute="top" secondItem="yB4-HX-G3F" secondAttribute="bottom" id="ZfM-QZ-ho2"/>
                             <constraint firstItem="j04-gB-I01" firstAttribute="width" secondItem="mDZ-QE-pYN" secondAttribute="width" id="aEp-PE-izn"/>
                             <constraint firstItem="j04-gB-I01" firstAttribute="leading" secondItem="mDZ-QE-pYN" secondAttribute="leading" id="acm-Ai-ZeT"/>
+                            <constraint firstItem="2x3-eg-Hma" firstAttribute="leading" secondItem="j04-gB-I01" secondAttribute="leading" id="f0J-ly-P2K"/>
                             <constraint firstItem="hcV-cX-CBN" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.8" id="fhW-QT-8Ly"/>
+                            <constraint firstItem="2x3-eg-Hma" firstAttribute="width" secondItem="j04-gB-I01" secondAttribute="width" id="ha7-T6-Dpb"/>
+                            <constraint firstItem="2x3-eg-Hma" firstAttribute="top" secondItem="j04-gB-I01" secondAttribute="bottom" id="tFW-EC-64k"/>
+                            <constraint firstItem="2x3-eg-Hma" firstAttribute="height" secondItem="j04-gB-I01" secondAttribute="height" id="tSW-Ar-mRj"/>
                             <constraint firstItem="mDZ-QE-pYN" firstAttribute="leading" secondItem="yB4-HX-G3F" secondAttribute="leading" id="vbx-k4-jqp"/>
                             <constraint firstItem="j04-gB-I01" firstAttribute="top" secondItem="mDZ-QE-pYN" secondAttribute="bottom" id="xoX-I1-GWx"/>
                         </constraints>
@@ -137,6 +148,7 @@
                     <connections>
                         <outlet property="clearButton" destination="j04-gB-I01" id="fbV-if-K90"/>
                         <outlet property="lapsTable" destination="hcV-cX-CBN" id="wmz-zL-pcG"/>
+                        <outlet property="saveLapsButton" destination="2x3-eg-Hma" id="2WW-TN-vOk"/>
                         <outlet property="startStopButton" destination="mDZ-QE-pYN" id="lEJ-uU-dDu"/>
                         <outlet property="timerLabel" destination="yB4-HX-G3F" id="Qax-Vv-Ux4"/>
                     </connections>
