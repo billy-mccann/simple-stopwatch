@@ -84,8 +84,5 @@ class TimerViewController: UIViewController, UITableViewDataSource, UITableViewD
   func deleteLap(indexForLap: Int) {
     self.timerViewModel.deleteLap(indexForLap)
   }
-
-  // MARK: TODO: use a collectionview
-  // MARK: TODO: Runloop.main vs DispatchQueue vs GCD
 }
 

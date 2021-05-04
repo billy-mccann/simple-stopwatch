@@ -124,6 +124,5 @@ class TimerViewModel: ObservableObject {
     } catch let error as NSError {
       print("Couldn't fetch from Core Data: \(error)")
     }
-    
   }
 }
