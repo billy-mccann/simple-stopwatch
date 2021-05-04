@@ -40,18 +40,25 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x3-eg-Hma" userLabel="Save Laps Button">
-                                <rect key="frame" x="117" y="301.33333333333331" width="156" height="36"/>
+                                <rect key="frame" x="46.666666666666657" y="301.33333333333331" width="156" height="36"/>
                                 <state key="normal" title="Save Laps"/>
                                 <connections>
                                     <action selector="saveLapsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kRY-0t-S7w"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j04-gB-I01" userLabel="Clear Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i33-g7-Yuq" userLabel="Delete Laps">
+                                <rect key="frame" x="202.66666666666663" y="301.33333333333331" width="156" height="36"/>
+                                <state key="normal" title="Delete Laps"/>
+                                <connections>
+                                    <action selector="deleteLapsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eq7-4u-UKq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j04-gB-I01" userLabel="Lap Button">
                                 <rect key="frame" x="117" y="265" width="156" height="36.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Lap"/>
                                 <connections>
-                                    <action selector="clearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i1d-Nk-0D0"/>
+                                    <action selector="lapPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kd4-KQ-fAF"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hcV-cX-CBN">
@@ -117,17 +124,21 @@
                             <constraint firstItem="j04-gB-I01" firstAttribute="height" secondItem="mDZ-QE-pYN" secondAttribute="height" id="DXd-Lf-S0q"/>
                             <constraint firstItem="mDZ-QE-pYN" firstAttribute="width" secondItem="yB4-HX-G3F" secondAttribute="width" id="Ifx-dh-jqc"/>
                             <constraint firstItem="hcV-cX-CBN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LvK-c5-T2n"/>
+                            <constraint firstItem="i33-g7-Yuq" firstAttribute="top" secondItem="2x3-eg-Hma" secondAttribute="top" id="MWZ-zp-9gL"/>
                             <constraint firstItem="hcV-cX-CBN" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.5" id="NZb-hP-0sn"/>
                             <constraint firstItem="yB4-HX-G3F" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.4" id="O9e-eL-N4s"/>
                             <constraint firstItem="yB4-HX-G3F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ugc-EY-Jx2"/>
                             <constraint firstItem="mDZ-QE-pYN" firstAttribute="height" secondItem="yB4-HX-G3F" secondAttribute="height" id="XdB-Id-SMy"/>
+                            <constraint firstItem="i33-g7-Yuq" firstAttribute="leading" secondItem="2x3-eg-Hma" secondAttribute="trailing" id="Z33-h1-v4e"/>
                             <constraint firstItem="hcV-cX-CBN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="0.9" id="ZMd-PW-WiH"/>
                             <constraint firstItem="mDZ-QE-pYN" firstAttribute="top" secondItem="yB4-HX-G3F" secondAttribute="bottom" id="ZfM-QZ-ho2"/>
                             <constraint firstItem="j04-gB-I01" firstAttribute="width" secondItem="mDZ-QE-pYN" secondAttribute="width" id="aEp-PE-izn"/>
                             <constraint firstItem="j04-gB-I01" firstAttribute="leading" secondItem="mDZ-QE-pYN" secondAttribute="leading" id="acm-Ai-ZeT"/>
-                            <constraint firstItem="2x3-eg-Hma" firstAttribute="leading" secondItem="j04-gB-I01" secondAttribute="leading" id="f0J-ly-P2K"/>
+                            <constraint firstItem="2x3-eg-Hma" firstAttribute="leading" secondItem="j04-gB-I01" secondAttribute="leading" multiplier="0.4" id="f0J-ly-P2K"/>
                             <constraint firstItem="hcV-cX-CBN" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.8" id="fhW-QT-8Ly"/>
+                            <constraint firstItem="i33-g7-Yuq" firstAttribute="width" secondItem="2x3-eg-Hma" secondAttribute="width" id="fzE-Uu-4vU"/>
                             <constraint firstItem="2x3-eg-Hma" firstAttribute="width" secondItem="j04-gB-I01" secondAttribute="width" id="ha7-T6-Dpb"/>
+                            <constraint firstItem="i33-g7-Yuq" firstAttribute="height" secondItem="2x3-eg-Hma" secondAttribute="height" id="jO8-jL-uRc"/>
                             <constraint firstItem="2x3-eg-Hma" firstAttribute="top" secondItem="j04-gB-I01" secondAttribute="bottom" id="tFW-EC-64k"/>
                             <constraint firstItem="2x3-eg-Hma" firstAttribute="height" secondItem="j04-gB-I01" secondAttribute="height" id="tSW-Ar-mRj"/>
                             <constraint firstItem="mDZ-QE-pYN" firstAttribute="leading" secondItem="yB4-HX-G3F" secondAttribute="leading" id="vbx-k4-jqp"/>
@@ -146,7 +157,8 @@
                         </button>
                     </navigationItem>
                     <connections>
-                        <outlet property="clearButton" destination="j04-gB-I01" id="fbV-if-K90"/>
+                        <outlet property="deleteLapsButton" destination="i33-g7-Yuq" id="gJt-RR-2YA"/>
+                        <outlet property="lapButton" destination="j04-gB-I01" id="FvE-Bg-N5a"/>
                         <outlet property="lapsTable" destination="hcV-cX-CBN" id="wmz-zL-pcG"/>
                         <outlet property="saveLapsButton" destination="2x3-eg-Hma" id="2WW-TN-vOk"/>
                         <outlet property="startStopButton" destination="mDZ-QE-pYN" id="lEJ-uU-dDu"/>

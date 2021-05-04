@@ -14,6 +14,8 @@
 		D018C23A25E498AC009C4596 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D018C23825E498AC009C4596 /* Main.storyboard */; };
 		D018C23C25E498AF009C4596 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D018C23B25E498AF009C4596 /* Assets.xcassets */; };
 		D018C23F25E498AF009C4596 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D018C23D25E498AF009C4596 /* LaunchScreen.storyboard */; };
+		D051C6842641F347001E61A1 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D051C6832641F347001E61A1 /* StorageManager.swift */; };
+		D051C6872641F3E9001E61A1 /* CoreDataStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D051C6862641F3E9001E61A1 /* CoreDataStorageManager.swift */; };
 		D053CAF525E5960F001C7BBA /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D053CAF425E5960F001C7BBA /* Publisher.swift */; };
 		D053CAFB25E5B93C001C7BBA /* StopwatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D053CAFA25E5B93C001C7BBA /* StopwatchViewModel.swift */; };
 		D0A65C1725F71F050036AFE3 /* LapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A65C1525F71F050036AFE3 /* LapCell.swift */; };
@@ -34,6 +36,8 @@
 		D018C23B25E498AF009C4596 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D018C23E25E498AF009C4596 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D018C24025E498AF009C4596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D051C6832641F347001E61A1 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		D051C6862641F3E9001E61A1 /* CoreDataStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorageManager.swift; sourceTree = "<group>"; };
 		D053CAF425E5960F001C7BBA /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		D053CAFA25E5B93C001C7BBA /* StopwatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewModel.swift; sourceTree = "<group>"; };
 		D0A65C1525F71F050036AFE3 /* LapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapCell.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				D0A65C1625F71F050036AFE3 /* LapCell.xib */,
 				D0AF0AF525F806DA00A78845 /* LapCellDelegate.swift */,
 				D0AF0AFF25F8433200A78845 /* StopwatchStrings.swift */,
+				D051C6832641F347001E61A1 /* StorageManager.swift */,
+				D051C6862641F3E9001E61A1 /* CoreDataStorageManager.swift */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -176,6 +182,7 @@
 			files = (
 				D053CAFB25E5B93C001C7BBA /* StopwatchViewModel.swift in Sources */,
 				D053CAF525E5960F001C7BBA /* Publisher.swift in Sources */,
+				D051C6842641F347001E61A1 /* StorageManager.swift in Sources */,
 				D018C23725E498AC009C4596 /* StopwatchViewController.swift in Sources */,
 				D0AF0AF625F806DA00A78845 /* LapCellDelegate.swift in Sources */,
 				D0AF0B0025F8433200A78845 /* StopwatchStrings.swift in Sources */,
@@ -183,6 +190,7 @@
 				D018C23325E498AC009C4596 /* AppDelegate.swift in Sources */,
 				D0A65C1725F71F050036AFE3 /* LapCell.swift in Sources */,
 				D018C23525E498AC009C4596 /* SceneDelegate.swift in Sources */,
+				D051C6872641F3E9001E61A1 /* CoreDataStorageManager.swift in Sources */,
 				D00B99A72602DA0000DA9810 /* LapsModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

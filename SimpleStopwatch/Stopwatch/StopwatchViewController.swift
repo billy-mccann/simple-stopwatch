@@ -6,16 +6,22 @@ class StopwatchViewController: UIViewController, UITableViewDataSource, UITableV
   // MARK: Parameters
   @IBOutlet var timerLabel: UILabel!
   @IBOutlet var startStopButton: UIButton!
-  @IBOutlet var clearButton: UIButton!
+  @IBOutlet var lapButton: UIButton!
   @IBOutlet var saveLapsButton: UIButton!
+  @IBOutlet var deleteLapsButton: UIButton!
   @IBOutlet var lapsTable: UITableView!
   
   private var laps: [String] = []
   private var cancellables: Set<AnyCancellable> = []
-  private let stopwatchViewModel = StopwatchViewModel()
+  private let stopwatchViewModel: StopwatchViewModel = { () -> StopwatchViewModel in
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let cdStorageManager = CoreDataStorageManager(appDelegate)
+    return StopwatchViewModel(cdStorageManager)
+  }()
   private let lapCellIdString: String = "lapCell"
   
   // MARK: Overrides
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     lapsTable.delegate = self
@@ -52,15 +58,19 @@ class StopwatchViewController: UIViewController, UITableViewDataSource, UITableV
   // MARK: Actions
   @IBAction func startStopPressed(_ button:UIButton) {
     self.stopwatchViewModel.startStopButtonPressed()
+    self.stopwatchViewModel.printLaps()
   }
   
-  @IBAction func clearPressed(_ button: UIButton) {
-    self.stopwatchViewModel.clearButtonPressed()
+  @IBAction func lapPressed(_ button: UIButton) {
+    self.stopwatchViewModel.lapButtonPressed()
   }
   
   @IBAction func saveLapsPressed(_ sender: UIButton) {
     self.stopwatchViewModel.saveLaps()
-    self.stopwatchViewModel.printLaps()
+  }
+  
+  @IBAction func deleteLapsPressed(_ sender: UIButton) {
+    self.stopwatchViewModel.deleteAllLaps()
   }
   
   // MARK: TableView Methods
