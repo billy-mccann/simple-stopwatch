@@ -3,7 +3,7 @@ import Combine
 import CoreData
 import UIKit
 
-class TimerViewModel: ObservableObject {
+class StopwatchViewModel: ObservableObject {
   
   @Published var timerText: String
   @Published var startStopButtonLabelText: String
@@ -26,7 +26,7 @@ class TimerViewModel: ObservableObject {
 
   init() {
     self.timerText = resetTimeString
-    self.startStopButtonLabelText = TimerStrings.TIMER_START_TEXT
+    self.startStopButtonLabelText = StopwatchStrings.STOPWATCH_START_TEXT
     
     formatter.numberStyle = .decimal
     formatter.maximumFractionDigits = 2
@@ -36,11 +36,11 @@ class TimerViewModel: ObservableObject {
   func startStopButtonPressed() {
     switch timerIsRunning {
     case true:
-      startStopButtonLabelText = TimerStrings.TIMER_START_TEXT
+      startStopButtonLabelText = StopwatchStrings.STOPWATCH_START_TEXT
       timerIsRunning = !timerIsRunning
       stopTimer()
     case false:
-      startStopButtonLabelText = TimerStrings.TIMER_STOP_TEXT
+      startStopButtonLabelText = StopwatchStrings.STOPWATCH_STOP_TEXT
       timerIsRunning = !timerIsRunning
       startTimer()
     }

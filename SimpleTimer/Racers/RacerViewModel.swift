@@ -1,5 +1,0 @@
-import Foundation
-
-class RacerViewModel {
-  
-}

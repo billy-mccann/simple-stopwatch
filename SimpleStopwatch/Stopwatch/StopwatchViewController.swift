@@ -1,7 +1,7 @@
 import UIKit
 import Combine
 
-class TimerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, LapCellDelegate {
+class StopwatchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, LapCellDelegate {
 
   // MARK: Parameters
   @IBOutlet var timerLabel: UILabel!
@@ -12,7 +12,7 @@ class TimerViewController: UIViewController, UITableViewDataSource, UITableViewD
   
   private var laps: [String] = []
   private var cancellables: Set<AnyCancellable> = []
-  private let timerViewModel = TimerViewModel()
+  private let stopwatchViewModel = StopwatchViewModel()
   private let lapCellIdString: String = "lapCell"
   
   // MARK: Overrides
@@ -25,7 +25,7 @@ class TimerViewController: UIViewController, UITableViewDataSource, UITableViewD
   
   // MARK: Methods
   private func bindViewModel() {
-    timerViewModel.$timerText
+    stopwatchViewModel.$timerText
       // DispatchQueue is necessary here, because Runloop.main can be busy if user is scrolling
       .receive(on: DispatchQueue.main)
       .sink { value in
@@ -33,14 +33,14 @@ class TimerViewController: UIViewController, UITableViewDataSource, UITableViewD
       .store(in: &cancellables)
 
     
-    timerViewModel.$startStopButtonLabelText
+    stopwatchViewModel.$startStopButtonLabelText
       .receive(on: RunLoop.main)
       .sink { value in
-        self.startStopButton.backgroundColor = value == TimerStrings.TIMER_START_TEXT ? UIColor.systemGreen : UIColor.systemRed
+        self.startStopButton.backgroundColor = value == StopwatchStrings.STOPWATCH_START_TEXT ? UIColor.systemGreen : UIColor.systemRed
         self.startStopButton.setTitle(value, for: .normal) }
       .store(in: &cancellables)
     
-    timerViewModel.$laps
+    stopwatchViewModel.$laps
       .receive(on: RunLoop.main)
       .sink { receivedLaps in
         self.laps = receivedLaps
@@ -51,16 +51,16 @@ class TimerViewController: UIViewController, UITableViewDataSource, UITableViewD
   
   // MARK: Actions
   @IBAction func startStopPressed(_ button:UIButton) {
-    self.timerViewModel.startStopButtonPressed()
+    self.stopwatchViewModel.startStopButtonPressed()
   }
   
   @IBAction func clearPressed(_ button: UIButton) {
-    self.timerViewModel.clearButtonPressed()
+    self.stopwatchViewModel.clearButtonPressed()
   }
   
   @IBAction func saveLapsPressed(_ sender: UIButton) {
-    self.timerViewModel.saveLaps()
-    self.timerViewModel.printLaps()
+    self.stopwatchViewModel.saveLaps()
+    self.stopwatchViewModel.printLaps()
   }
   
   // MARK: TableView Methods
@@ -82,7 +82,7 @@ class TimerViewController: UIViewController, UITableViewDataSource, UITableViewD
   }
   
   func deleteLap(indexForLap: Int) {
-    self.timerViewModel.deleteLap(indexForLap)
+    self.stopwatchViewModel.deleteLap(indexForLap)
   }
 }
 
