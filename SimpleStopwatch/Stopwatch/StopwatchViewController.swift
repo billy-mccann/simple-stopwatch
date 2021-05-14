@@ -21,7 +21,6 @@ class StopwatchViewController: UIViewController, UITableViewDataSource, UITableV
   private let lapCellIdString: String = "lapCell"
   
   // MARK: Overrides
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     lapsTable.delegate = self

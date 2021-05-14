@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  SimpleTimer
-//
-//  Created by Bill McCann on 2/22/21.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  SimpleTimer
-//
-//  Created by Bill McCann on 2/22/21.
-//
-
 import UIKit
 import CoreData
 

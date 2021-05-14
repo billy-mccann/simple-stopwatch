@@ -78,17 +78,16 @@
 		D018C23125E498AC009C4596 /* SimpleStopwatch */ = {
 			isa = PBXGroup;
 			children = (
-				D0AF0AFA25F82F0800A78845 /* images */,
+				D0FC2451264F064F000AE594 /* LapCell */,
 				D01D206725EAE9680009650A /* Stopwatch */,
-				D018C23225E498AC009C4596 /* AppDelegate.swift */,
-				D018C23425E498AC009C4596 /* SceneDelegate.swift */,
-				D0DD793B25EAB23C0055DC63 /* RoundedButton.swift */,
-				D018C23825E498AC009C4596 /* Main.storyboard */,
+				D0FC2450264F051C000AE594 /* StorageManager */,
+				D0FC2453264F078B000AE594 /* Storyboards */,
+				D0FC2452264F073F000AE594 /* RoundedButton */,
+				D0FC2455264F07CD000AE594 /* RequiredDelegates */,
 				D018C23B25E498AF009C4596 /* Assets.xcassets */,
-				D018C23D25E498AF009C4596 /* LaunchScreen.storyboard */,
+				D0AF0AFA25F82F0800A78845 /* images */,
 				D018C24025E498AF009C4596 /* Info.plist */,
 				D053CAF425E5960F001C7BBA /* Publisher.swift */,
-				D00B99A52602DA0000DA9810 /* LapsModel.xcdatamodeld */,
 			);
 			path = SimpleStopwatch;
 			sourceTree = "<group>";
@@ -98,14 +97,55 @@
 			children = (
 				D018C23625E498AC009C4596 /* StopwatchViewController.swift */,
 				D053CAFA25E5B93C001C7BBA /* StopwatchViewModel.swift */,
-				D0A65C1525F71F050036AFE3 /* LapCell.swift */,
-				D0A65C1625F71F050036AFE3 /* LapCell.xib */,
-				D0AF0AF525F806DA00A78845 /* LapCellDelegate.swift */,
 				D0AF0AFF25F8433200A78845 /* StopwatchStrings.swift */,
+			);
+			path = Stopwatch;
+			sourceTree = "<group>";
+		};
+		D0FC2450264F051C000AE594 /* StorageManager */ = {
+			isa = PBXGroup;
+			children = (
+				D00B99A52602DA0000DA9810 /* LapsModel.xcdatamodeld */,
 				D051C6832641F347001E61A1 /* StorageManager.swift */,
 				D051C6862641F3E9001E61A1 /* CoreDataStorageManager.swift */,
 			);
-			path = Stopwatch;
+			path = StorageManager;
+			sourceTree = "<group>";
+		};
+		D0FC2451264F064F000AE594 /* LapCell */ = {
+			isa = PBXGroup;
+			children = (
+				D0A65C1525F71F050036AFE3 /* LapCell.swift */,
+				D0A65C1625F71F050036AFE3 /* LapCell.xib */,
+				D0AF0AF525F806DA00A78845 /* LapCellDelegate.swift */,
+			);
+			path = LapCell;
+			sourceTree = "<group>";
+		};
+		D0FC2452264F073F000AE594 /* RoundedButton */ = {
+			isa = PBXGroup;
+			children = (
+				D0DD793B25EAB23C0055DC63 /* RoundedButton.swift */,
+			);
+			path = RoundedButton;
+			sourceTree = "<group>";
+		};
+		D0FC2453264F078B000AE594 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D018C23D25E498AF009C4596 /* LaunchScreen.storyboard */,
+				D018C23825E498AC009C4596 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D0FC2455264F07CD000AE594 /* RequiredDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				D018C23225E498AC009C4596 /* AppDelegate.swift */,
+				D018C23425E498AC009C4596 /* SceneDelegate.swift */,
+			);
+			path = RequiredDelegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
