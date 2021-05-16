@@ -68,7 +68,11 @@ class StopwatchViewModel: ObservableObject {
   }
   
   func saveLaps() {
-    storageManager.saveLaps(laps)
+    _ = storageManager.saveLaps(laps)
+  }
+  
+  func loadLaps() {
+    self.laps = storageManager.loadLaps()
   }
   
   func deleteAllLaps() {

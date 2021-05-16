@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19H15" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Laps" representedClassName="Laps" syncable="YES" codeGenerationType="class">
+    <entity name="Lap" representedClassName="Lap" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lap_number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lap_time" optional="YES" attributeType="String"/>
+        <attribute name="session_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Session" inverseName="laps" inverseEntity="Session"/>
+    </entity>
+    <entity name="Session" representedClassName="Session" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="lap_times" optional="YES" attributeType="String"/>
-        <attribute name="session_id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="laps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lap" inverseName="session" inverseEntity="Lap"/>
     </entity>
     <elements>
-        <element name="Laps" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Lap" positionX="-32.796875" positionY="-71.75390625" width="148.015625" height="118"/>
+        <element name="Session" positionX="-439.8984375" positionY="-45.37109375" width="185.97265625" height="118"/>
     </elements>
 </model>

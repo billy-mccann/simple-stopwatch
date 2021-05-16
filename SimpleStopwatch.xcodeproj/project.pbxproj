@@ -18,12 +18,17 @@
 		D051C6872641F3E9001E61A1 /* CoreDataStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D051C6862641F3E9001E61A1 /* CoreDataStorageManager.swift */; };
 		D053CAF525E5960F001C7BBA /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D053CAF425E5960F001C7BBA /* Publisher.swift */; };
 		D053CAFB25E5B93C001C7BBA /* StopwatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D053CAFA25E5B93C001C7BBA /* StopwatchViewModel.swift */; };
+		D09CC5A9264F47D000D952B1 /* Lap+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09CC5A5264F47D000D952B1 /* Lap+CoreDataClass.swift */; };
+		D09CC5AA264F47D000D952B1 /* Lap+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09CC5A6264F47D000D952B1 /* Lap+CoreDataProperties.swift */; };
+		D09CC5AB264F47D000D952B1 /* Session+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09CC5A7264F47D000D952B1 /* Session+CoreDataClass.swift */; };
+		D09CC5AC264F47D000D952B1 /* Session+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09CC5A8264F47D000D952B1 /* Session+CoreDataProperties.swift */; };
 		D0A65C1725F71F050036AFE3 /* LapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A65C1525F71F050036AFE3 /* LapCell.swift */; };
 		D0A65C1825F71F050036AFE3 /* LapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A65C1625F71F050036AFE3 /* LapCell.xib */; };
 		D0AF0AF625F806DA00A78845 /* LapCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF0AF525F806DA00A78845 /* LapCellDelegate.swift */; };
 		D0AF0AFB25F82F0800A78845 /* images in Resources */ = {isa = PBXBuildFile; fileRef = D0AF0AFA25F82F0800A78845 /* images */; };
 		D0AF0B0025F8433200A78845 /* StopwatchStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF0AFF25F8433200A78845 /* StopwatchStrings.swift */; };
 		D0DD793C25EAB23C0055DC63 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DD793B25EAB23C0055DC63 /* RoundedButton.swift */; };
+		D0FC2458264F0C26000AE594 /* StorageManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC2457264F0C26000AE594 /* StorageManagerError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,12 +45,17 @@
 		D051C6862641F3E9001E61A1 /* CoreDataStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorageManager.swift; sourceTree = "<group>"; };
 		D053CAF425E5960F001C7BBA /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		D053CAFA25E5B93C001C7BBA /* StopwatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewModel.swift; sourceTree = "<group>"; };
+		D09CC5A5264F47D000D952B1 /* Lap+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lap+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D09CC5A6264F47D000D952B1 /* Lap+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lap+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D09CC5A7264F47D000D952B1 /* Session+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D09CC5A8264F47D000D952B1 /* Session+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D0A65C1525F71F050036AFE3 /* LapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapCell.swift; sourceTree = "<group>"; };
 		D0A65C1625F71F050036AFE3 /* LapCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LapCell.xib; sourceTree = "<group>"; };
 		D0AF0AF525F806DA00A78845 /* LapCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapCellDelegate.swift; sourceTree = "<group>"; };
 		D0AF0AFA25F82F0800A78845 /* images */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = images; sourceTree = SOURCE_ROOT; };
 		D0AF0AFF25F8433200A78845 /* StopwatchStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchStrings.swift; sourceTree = "<group>"; };
 		D0DD793B25EAB23C0055DC63 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		D0FC2457264F0C26000AE594 /* StorageManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManagerError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +115,14 @@
 		D0FC2450264F051C000AE594 /* StorageManager */ = {
 			isa = PBXGroup;
 			children = (
+				D09CC5A5264F47D000D952B1 /* Lap+CoreDataClass.swift */,
+				D09CC5A6264F47D000D952B1 /* Lap+CoreDataProperties.swift */,
+				D09CC5A7264F47D000D952B1 /* Session+CoreDataClass.swift */,
+				D09CC5A8264F47D000D952B1 /* Session+CoreDataProperties.swift */,
 				D00B99A52602DA0000DA9810 /* LapsModel.xcdatamodeld */,
 				D051C6832641F347001E61A1 /* StorageManager.swift */,
 				D051C6862641F3E9001E61A1 /* CoreDataStorageManager.swift */,
+				D0FC2457264F0C26000AE594 /* StorageManagerError.swift */,
 			);
 			path = StorageManager;
 			sourceTree = "<group>";
@@ -222,16 +237,21 @@
 			files = (
 				D053CAFB25E5B93C001C7BBA /* StopwatchViewModel.swift in Sources */,
 				D053CAF525E5960F001C7BBA /* Publisher.swift in Sources */,
+				D09CC5AA264F47D000D952B1 /* Lap+CoreDataProperties.swift in Sources */,
 				D051C6842641F347001E61A1 /* StorageManager.swift in Sources */,
+				D09CC5AC264F47D000D952B1 /* Session+CoreDataProperties.swift in Sources */,
 				D018C23725E498AC009C4596 /* StopwatchViewController.swift in Sources */,
 				D0AF0AF625F806DA00A78845 /* LapCellDelegate.swift in Sources */,
 				D0AF0B0025F8433200A78845 /* StopwatchStrings.swift in Sources */,
 				D0DD793C25EAB23C0055DC63 /* RoundedButton.swift in Sources */,
 				D018C23325E498AC009C4596 /* AppDelegate.swift in Sources */,
 				D0A65C1725F71F050036AFE3 /* LapCell.swift in Sources */,
+				D09CC5A9264F47D000D952B1 /* Lap+CoreDataClass.swift in Sources */,
 				D018C23525E498AC009C4596 /* SceneDelegate.swift in Sources */,
 				D051C6872641F3E9001E61A1 /* CoreDataStorageManager.swift in Sources */,
 				D00B99A72602DA0000DA9810 /* LapsModel.xcdatamodeld in Sources */,
+				D09CC5AB264F47D000D952B1 /* Session+CoreDataClass.swift in Sources */,
+				D0FC2458264F0C26000AE594 /* StorageManagerError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
